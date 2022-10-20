@@ -91,7 +91,7 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
     DpDatePickerModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAUAnR3F5Ps0Z9yedR058rWSHQUbDHgDAo',
+      apiKey: 'xxxxxxxxxxxxxxxxxxx',
       libraries: ['places', 'directions']
     }),
     AgmDirectionModule
