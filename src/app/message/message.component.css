@@ -1,0 +1,14 @@
+.chat-1 {
+    padding: 10px 20px;
+    background-color: rgba(153, 144, 140, 0.25);
+    width: fit-content !important;
+    border-radius: 10px;
+}
+
+.chat-2 {
+    padding: 10px 20px;
+    background-color: #FFCC2F;
+    width: fit-content !important;
+    border-radius: 10px;
+    float: right;
+}

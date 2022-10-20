@@ -1,0 +1,25 @@
+<div [ngClass]="!hasLoaded ? 'd-block': 'd-none'"
+    class="row d-flex justify-content-center align-items-center bg-primary" style="width: 100vw; min-height: 100vh;">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="container text-center mt-5 p-0">
+            <div class="row mt-5">
+                <div class="col-12 pt-5 mt-5">
+                    <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                        style="margin: o auto;border-radius: 2px; transform: skew(-15deg);">Confirmed!</h1>
+                </div>
+                <div class="col-12 text-center pt-5"><img class="pt-5"
+                        src="assets/img/Group%2062.png?h=c1ebc1cf8aeaac783b155a8959d5b0cb">
+                    <h2>Please wait...</h2>
+                    <h3>We are routing you <br>to the reciever<br></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div [ngClass]="hasLoaded ? 'd-block': 'd-none'">
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" iconUrl="assets/img/car.png">
+        </agm-marker>
+        <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+    </agm-map>
+</div>

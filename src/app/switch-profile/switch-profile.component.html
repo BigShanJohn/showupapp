@@ -1,0 +1,19 @@
+<div class="modal  " [ngClass]="showSwitchProfile ? 'd-block show align-items-center' : 'd-none fade'" role="dialog"
+    tabindex="-1" id="switch-profiles">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mx-auto" role="document"
+        style="width: 86vw;">
+        <div class="modal-content b-radius">
+            <div class="modal-body text-center p-3 pt-5 pb-5 bg-primary b-radius">
+                
+                <h2 class="modal-title"><strong>Switch</strong><br><strong>Profiles</strong></h2>
+                <p>You are about to switch to <br>your <strong><em>
+                            {{ type == 'driver' ? 'Deliver' : 'Send & Recieve'}}
+                        </em></strong>profile, would<br>&nbsp;you
+                    like to precoeed?</p>
+                <button class="btn btn-cancel" (click)="cancel()" type="button"
+                    data-bs-dismiss="modal"><strong>Cancel</strong></button>
+                <button class="btn btn-continue" type="button" (click)="continue()"><strong>Continue</strong></button>
+            </div>
+        </div>
+    </div>
+</div>

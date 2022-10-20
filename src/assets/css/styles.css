@@ -1,0 +1,140 @@
+/* Font size */
+
+p, a {
+  font-size: 14px;
+}
+
+label {
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.form-control-sm {
+  font-size: 16px;
+}
+
+/* Colors */
+
+.bg-primary {
+  background-color: #FFCC2F !important;
+}
+
+.bg-dark {
+  background-color: #1E1C1B !important;
+}
+
+.bg-muted {
+  background-color: #99908C !important;
+}
+
+.text-primary {
+  color: #FFCC2F !important;
+}
+
+.text-dark {
+  color: #1E1C1B !Important;
+}
+
+.text-muted {
+  color: #99908c !important;
+}
+
+a {
+  color: #FFCC2F;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #c39403;
+}
+
+/* Forms */
+
+.form-control-sm {
+  border: none;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  padding: 0;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+  border-bottom: 2px solid #FFCC2F;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 204, 47, 0.6);
+  outline: 0 none;
+}
+
+.btn-cancel {
+  border: 2px solid #1E1C1B;
+  border-radius: 2px;
+  min-width: 120px;
+  margin: 5px;
+}
+
+.btn-continue {
+  color: #FFCC2F;
+  background: #1e1c1b;
+  border-radius: 2px;
+  min-width: 120px;
+  margin: 5px;
+  border: 2px solid #1E1C1B;
+}
+
+.btn-continue:hover, .btn-continue:active {
+  border: 2px solid #1E1C1B;
+  border-radius: 2px;
+  min-width: 120px;
+  margin: 5px;
+}
+
+.b-radius {
+  border-radius: 20px;
+}
+
+.h-100vh {
+  min-height: 100vh;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.row {
+  margin: 0;
+}
+
+.square {
+  width: 43vw;
+  height: 43vw;
+  box-shadow: 3px 7px 22px 4px rgba(196,196,196,0.30);
+}
+
+.b-radius-sm {
+  border-radius: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: mundial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p, a, snap, div {
+  font-family: mundial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+

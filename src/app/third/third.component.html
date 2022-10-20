@@ -1,0 +1,66 @@
+<section class="d-flex justify-content-center align-items-center bg-primary">
+    <div></div>
+
+    <div class="row d-flex justify-content-center align-items-center align-content-center bg-white p-4"
+        style="margin: 0 auto;border-radius: 20px;margin-top: 8vh;margin-bottom: 8vh;margin-right: 5vw;margin-left: 5vw;">
+        <div class="col-12 pb-5">
+            <img [routerLink]="['/first']" routerLinkActive="router-link-active"
+                src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+        </div>
+        <div class="col-12 text-center">
+            <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                style="position:relative; z-index:1; margin: o auto;border-radius: 2px; transform: skew(-15deg);">
+                &nbsp;Registration&nbsp;</h1>
+            <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                style="margin-top: -20px; margin: o auto;border-radius: 2px; transform: skew(-15deg);">info<br></h1>
+        </div>
+        <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+            <p *ngFor="let error of errors">
+                - {{ error }}
+            </p>
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">VIN</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN"
+                placeholder="0000000000" [(ngModel)]="registrationVin">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">Registered Owner</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN" placeholder="Name"
+                [(ngModel)]="registedOwner">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">License Number</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN"
+                placeholder="0000000000" [(ngModel)]="registrationLicenseNumber">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">Make</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN"
+                placeholder="ex. Toyota" [(ngModel)]="make">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">Model</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN"
+                placeholder="ex. Camry" [(ngModel)]="model">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="VIN">Year</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="VIN" placeholder="YYYY"
+                [(ngModel)]="year">
+        </div>
+
+        <div class="col-12 text-center pt-5">
+            <button class="btn btn-warning btn-lg bg-primary rounded-circle" (click)="submit()"
+                style="width: 75px;height: 75px;">
+                <svg *ngIf="!isSubmit" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                    fill="none" class="text-dark" style="font-size: 23px; margin-bottom: 2px;">
+                    <path
+                        d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                        fill="currentColor"></path>
+                </svg>
+                <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+            </button>
+        </div>
+    </div>
+</section>

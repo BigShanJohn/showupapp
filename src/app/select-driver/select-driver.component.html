@@ -1,0 +1,99 @@
+<div [ngClass]="!hasLoaded ? 'd-block': 'd-none'"
+    class="row d-flex justify-content-center align-items-center bg-primary" style="width: 100vw; min-height: 100vh;">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="container text-center mt-5 p-0">
+            <div class="row mt-5">
+                <div class="col-12 pt-5 mt-5">
+                    <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                        style="margin: o auto;border-radius: 2px; transform: skew(-15deg);">Welcome!</h1>
+                </div>
+                <div class="col-12 text-center pt-5"><img class="pt-5"
+                        src="assets/img/Group%2062.png?h=c1ebc1cf8aeaac783b155a8959d5b0cb">
+                    <h2>Please wait...</h2>
+                    <h3>We are connecting you <br>to the nearest driver<br></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div [ngClass]="hasLoaded ? 'd-block': 'd-none'">
+    <div class="form-group">
+        <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+            placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+            #search [value]="address">
+    </div>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker *ngFor="let user of users" [latitude]="user.latitude" [longitude]="user.longitude" iconUrl ="assets/img/car.png">
+            <agm-info-window>
+                <section class="b-radius bg-white">
+                    <div class="row">
+                        <div class="col text-center"><img
+                                src="assets/img/Vector%203.svg?h=8e3073ce969f950d04b9849265ede72e"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 p-4 pb-0">
+                            <h2>Meet the Driver</h2>
+                        </div>
+                        <div class="col-12 text-left">
+                            <button class="btn btn-continue" type="button"><strong>Scan
+                                    Code</strong></button>
+                            <button (click)="viewDriver(user)" class="btn btn-cancel bg-primary" type="button"
+                                style="border-color: #FFCC2F"><strong>View Driver</strong></button>
+                        </div>
+                    </div>
+                    <div class="row pb-4">
+                        <div class="col-12 p-4 pb-0">
+                            <h2>Delivery Details</h2>
+                        </div>
+                        <div class="col-12">
+                            <div class="row p-1 b-radius pb-4" *ngIf="item">
+                                <div class="col-4 d-flex align-items-center"><img class="rounded-circle"
+                                        [src]="item.photo" width="95px" height="95px" style="object-fit: cover;"></div>
+                                <div class="col-8">
+                                    <h5 class="pt-3">{{ item.description }}</h5>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-5 p-0">
+                                                <p class="text-muted mb-2">Send To:</p>
+                                                <p class="text-muted mb-2">Pick Up:</p>
+                                                <p class="text-muted mb-2">Drop Off:</p>
+                                                <p class="text-muted mb-2">Est. Arrival:</p>
+                                                <p class="text-muted">Distance:</p>
+                                                <p class="text-muted m-0">Fee:</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p class="text-primary mb-2"
+                                                    style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <strong>{{ item.receiverName}}</strong><br>
+                                                </p>
+                                                <p class="text-primary mb-2"
+                                                    style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <strong>{{item.pickUpLocation.address}}</strong><br>
+                                                </p>
+                                                <p class="text-primary mb-2"
+                                                    style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <strong>{{item.dropOffLocation.address}}</strong><br>
+                                                </p>
+                                                <p class="text-primary mb-2"
+                                                    style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <strong>{{item.time}}</strong><br>
+                                                </p>
+                                                <p class="text-primary"
+                                                    style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <strong>{{item.distance}}mi</strong><br>
+                                                </p>
+                                                <p class="text-center m-0 text-white bg-primary p-1 b-radius-sm"
+                                                    style="width: 70%;"><strong>${{ item.fee }}</strong><br></p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>
+<app-view-driver [show]="showDriverInfo" [driver]="driver" (driverSelect)="onDriverSelect($event)"></app-view-driver>

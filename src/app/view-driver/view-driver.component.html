@@ -1,0 +1,24 @@
+<div class="modal  " [ngClass]="show ? 'd-block show align-items-center' : 'd-none fade'" role="dialog" tabindex="-1"
+    id="driver-info">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mx-auto" role="document"
+        style="width: 86vw;">
+        <div class="modal-content b-radius" *ngIf="driver">
+            <div class="modal-body text-center p-4 bg-white b-radius"><img class="rounded-circle" [src]="driver.photo"
+                    width="100px" height="100px" style="object-fit: cover;">
+                <h2 class="modal-title">Driver info</h2>
+                <div class="row w-75 pb-4 pt-3" style="margin: 0 auto;">
+                    <div class="col-4">
+                        <p class="text-start mb-2">Name:</p>
+                        <p class="text-start mb-2">Vehicle:</p>
+                    </div>
+                    <div class="col">
+                        <p class="text-start mb-2 text-primary"><strong>{{ driver.name}}</strong></p>
+                        <p class="text-start mb-2 text-primary"><strong> {{ driver.make }} {{ driver.model }} {{
+                                driver.year }} {{driver.registrationLicenseNumber}}</strong></p>
+                    </div>
+                </div><button class="btn btn-continue bg-primary text-dark" type="button"
+                    (click)="message()"><strong>Message</strong></button>
+            </div>
+        </div>
+    </div>
+</div>

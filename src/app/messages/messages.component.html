@@ -1,0 +1,40 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center"><img
+            src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" ></div>
+    <div class="col">
+        <h1>Messages</h1>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div *ngFor="let message of messages" class="row p-1  pb-4 pt-4"
+    style="border-bottom: 1px solid #cccccc; width: 96vw; margin: 0 auto;" (click)="chat(message._id)">
+    <div class="col-4 d-flex align-items-center">
+        <img *ngIf="message.userId != user._id" class="rounded-circle" [src]="message.userPhoto" width="95px"
+            height="95px" style="object-fit: cover;">
+        <img *ngIf="message.driverId == user._id" class="rounded-circle" [src]="message.driverPhoto" width="95px"
+            height="95px" style="object-fit: cover;">
+    </div>
+    <div class="col">
+        <h5 class="pt-3">{{ message.userId != user._id ? message.userName : message.driverName }}</h5>
+        <section>
+            <div class="row">
+                <div class="col p-0">
+                    <p class="text-muted m-0" *ngIf="getLastMessage(message.messages)">{{
+                        getLastMessage(message.messages).text }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-3">
+        <section>
+            <div class="row">
+                <div class="col p-0">
+                    <p class="text-end text-muted m-0" *ngIf="getLastMessage(message.messages)">{{
+                        getLastMessage(message.messages).date
+                        }}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<app-footer></app-footer>

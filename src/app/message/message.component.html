@@ -1,0 +1,47 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center">
+        <img  [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  src="assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+    </div>
+    <div class="col">
+        <h2 *ngIf="receiver">
+            <img [src]="receiver.photo"
+                style="width: 35px; height: 35px; object-fit:cover; border-radius: 100%; margin-right: 15px;">
+            {{ receiver.name }}
+        </h2>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div class="row pb-2 pt-5 p-3" style="text-align: left;">
+    <div class="col">
+        <p class="text-center text-muted" style="font-size:12px;"><strong>Today 3:58 pm</strong></p>
+    </div>
+</div>
+<div *ngIf="message">
+    <div *ngFor="let msg of message.messages">
+        <div class="row p-1" style="text-align: left;" *ngIf="msg.userId == user._id">
+            <div class="col">
+                <p class="chat-1 m-0">{{ msg.text }}</p>
+            </div>
+        </div>
+        <div class="row p-1" style="text-align: left;" *ngIf="msg.userId != user._id">
+            <div class="col">
+                <p class="chat-2 m-0">{{ msg.text }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row p-2 pb-5" style="position:fixed; width: 100%; bottom: 0; left: 0;">
+    <div class="col-10 align-self-center">
+        <div style="background: #F7F5F4; border-radius: 10px; ">
+            <img class="pb-1" src="assets/img/Group%20r163.svg?h=79af4be5cc1c0d1f7da0aa6d052d6c76">
+            <input class="form-control-lg" [(ngModel)]="text" type="text"
+                style="background: #F7F5F4;border-style: none;width: 80%;" placeholder="Type message...">
+        </div>
+    </div>
+    <div class="col-2 text-start align-self-center" (click)=" submit()">
+        <img *ngIf="!isSubmit" src="assets/img/Group%20r171.svg?h=02250a578e78c5105b086457345b1a1b">
+        <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+    </div>
+</div>

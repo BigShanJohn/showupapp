@@ -1,0 +1,68 @@
+<div style="background-color: #1E1C1B; min-height:  100%;" *ngIf="item">
+    <div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+        <div class="col-2 d-flex justify-content-center align-items-center">
+            <img src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5" style="filter: invert(100%);"
+                [routerLink]="['/send']" routerLinkActive="router-link-active">
+        </div>
+        <div class="col">
+            <h1 class="text-white">Send</h1>
+        </div>
+        <div class="col-2 text-center"></div>
+    </div>
+    <div class="row">
+        <div class="col text-center"><img class="b-radius"
+                style="width:86vw; height: 103vw; object-fit: cover; margin: 0 auto;" [src]="item.photo"></div>
+    </div>
+    <div class="row pt-5">
+        <div class="col text-center">
+            <h2 class="text-center text-white">{{ item.description }}</h2>
+            <p class="text-white">Please confirm delivery details</p>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-3">
+            <p class="text-muted mb-2">Pick Up:</p>
+            <p class="text-muted mb-2">Drop Off:</p>
+            <p class="text-muted mb-2">Receiver:</p>
+            <p class="text-muted mb-2">Est. Time:</p>
+            <p class="text-muted mb-4">Distance:</p>
+            <p class="text-muted">Fee:</p>
+        </div>
+        <div class="col-9">
+            <p class="text-primary mb-2" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <strong>{{ item.pickUpLocation.address }}</strong>
+            </p>
+            <p class="text-primary mb-2" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <strong>{{ item.pickUpLocation.address }}&nbsp;</strong>
+            </p>
+            <p class="text-primary mb-2" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <strong>{{ item.receiverName }}</strong>
+            </p>
+            <p class="text-primary mb-2" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <strong>{{ item.time }}</strong>
+            </p>
+            <p class="text-primary mb-4" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <strong>{{ item.distance }}</strong>
+            </p>
+            <h2 class="text-center bg-primary b-radius-sm p-2" style="width: 40%;"><strong>$ {{ item.fee }}</strong><br>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <section>
+                <div class="row">
+                    <div class="col">
+                        <button (click)="submit()"
+                            class="btn btn-primary p-2 mb-5 mt-4 bg-primary text-dark b-radius-sm w-100" type="button">
+                            <strong *ngIf="!isSubmit">Confirm</strong>
+                            <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+                            <br>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>

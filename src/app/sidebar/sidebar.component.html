@@ -1,0 +1,35 @@
+<div class="modal" [ngClass]="show ? 'd-block show align-items-center' : 'd-none fade'" role="dialog" tabindex="-1"
+    id="side-slide">
+    <div class="modal-dialog p-0 m-0 w-75" role="document">
+        <div class="modal-content bg-primary">
+            <div class="modal-body d-flex align-items-center h-100vh">
+                <h4 (click)="show=false"
+                    style="position: absolute; top: 50px; text-align: right; width: 100%; padding-right: 30px;"><i
+                        class="fa fa-times"></i>&nbsp;</h4>
+                <div class="row p-4 w-100">
+
+                    <div class="col-12 pb-4">
+                        <img class="rounded-circle" [src]="user.photo" width="70px" height="70px"
+                            style="object-fit: cover;margin-bottom: 10px;">
+                        <h4>{{user.name}}</h4>
+                        <p>{{user.email}}</p>
+                    </div>
+                    <div class="col-12 pb-4">
+                        <h6 class="pb-2" (click)="switch()"><img
+                                src="/assets/img/Group%20129.png?h=f1fc1cd93d30c50fcf925c033b9bd53b">&nbsp;Switch to
+                            {{ user.type == 'customer' ? 'Deliver' : 'Send & Recieve'}}</h6>
+                        <h6 class="pb-2" [routerLink]="['/settings']" routerLinkActive="router-link-active"><img
+                                src="/assets/img/Ve2222ctor.png?h=cb3eebdcd5c01b822feae72335ed586a">&nbsp;Settings</h6>
+                    </div>
+                    <div class="col-12 pb-4">
+                        <h6><img (click)="logout()"
+                                src="/assets/img/Group%20176.png?h=4f3ce4425d8c60f9e8478908144fb511">&nbsp;Log Out</h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-switch-profile [showSwitchProfile]="showSwitchProfile" [type]="type" (switch)="onSwitch($event)">
+</app-switch-profile>

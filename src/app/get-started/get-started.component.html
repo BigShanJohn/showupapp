@@ -1,0 +1,19 @@
+<div class="modal  " [ngClass]="show ? 'd-block show align-items-center' : 'd-none fade'" role="dialog"
+    id="get-started">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mx-auto" role="document"
+        style="width: 86vw;">
+        <div class="modal-content b-radius">
+            <div class="modal-body text-center p-3 pt-5 pb-5 bg-primary b-radius">
+                <h4 (click)="show=false"
+                    style="position: absolute; top: 20px; text-align: right; width: 100%; padding-right: 30px;"><i
+                        class="fa fa-times"></i>&nbsp;</h4>
+                <img class="pb-2"
+                    src="/assets/img/car-svg-vector-1.svg?h=9433df21a4c774cb6a4cf11193a9750b">
+                <p>Before you can make <br>deliveries, you must submit <br>your driver information.</p>
+                <button class="btn btn-continue" type="button" (click)="onStarted()">
+                    <strong>Let's get started!</strong>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

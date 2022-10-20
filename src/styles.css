@@ -1,0 +1,135 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+/* You can add global styles to this file, and also import other style files */
+.loader {
+    width: 30px;
+}
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.ripple:hover {
+    background: #FFCC2F radial-gradient(circle, transparent 1%, #FFCC2F 1%) center/15000%;
+    transition: 0.3s linear;
+}
+
+.ripple:active {
+    background-color: #FFCC2F;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+
+.ripple:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.ripple:hover p {
+    color: #fff;
+}
+
+.pac-container {
+    z-index: 2000 !important;
+}
+
+body {
+    background: #ededed;
+}
+
+.b-radius {
+    background: #fff;
+}
+
+.bg-white {
+    border: #fff;
+}
+
+input:checked+.slider {
+    background-color: #FFCC2F;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    color: #1E1C1B
+}
+
+#copyButton button {
+    border: transparent;
+    background: transparent;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dp-input-container input {
+    border: none;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+    padding: 0;
+    min-width: 100% !important;
+    width: 100% !important;
+    color: #1E1C1B;
+}
+
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    margin: 0;
+
+    color: #FFCC2F;
+    width: 1.45rem;
+    height: 1.45rem;
+    border: 0.15rem solid #FFCC2F;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ffcc2f;
+    background-color: #ffcc2f;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="radio"]:focus {
+
+    outline-offset: max(2px, 0.15em);
+}
+
+.radio-label {
+    margin-right: 1rem;
+}
+
+.dashboard-footer {
+    position: fixed;
+    bottom: 0px;
+    min-width: 100%;
+    background: #fff;
+}
+
+.dashboard-main {
+    padding-bottom: 200px;
+}
+
+h2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 18px;
+}

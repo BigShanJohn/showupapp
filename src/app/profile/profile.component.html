@@ -1,0 +1,56 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center">
+        <img [routerLink]="['/settings']" routerLinkActive="router-link-active"
+            src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+
+    </div>
+    <div class="col">
+        <h2>Profile</h2>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div class="row">
+    <div class="col text-center">
+
+        <img class="rounded-circle" [src]="user.photo" width="100px" height="100px"
+            style="object-fit: cover; margin-bottom: -50px;" (click)="uploadPhoto()">
+        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="uploadPhoto()"></i>
+        <input id="file-upload" type="file" (change)="fileChangeEvent($event)" class="fileInputProfile"
+            style="display: none;">
+    </div>
+</div>
+<div class="row pb-5 pt-5 p-3 bg-white">
+    <div class="col">
+        <p class="pt-4 m-0 pb-1">Name</p><input type="text" class="w-100"
+            style="border: 0; border-bottom: 1px solid gray;" [value]="user.name" readonly>
+        <p class="pt-4 m-0 pb-1">Email</p><input type="email" class="w-100"
+            style="border: 0; border-bottom: 1px solid gray;" [value]="user.email" readonly>
+        <p class="pt-4 m-0 pb-1">Phone</p><input type="text" class="w-100"
+            style="border: 0; border-bottom: 1px solid gray;" [value]="user.phone" readonly>
+    </div>
+</div>
+<div *ngIf="user.type == 'driver'">
+    <div class="row">
+        <div class="col p-3 ">
+            <h2>Driver Info</h2>
+        </div>
+    </div>
+    <div class="row px-3 py-2 bg-white bottom-border" [routerLink]="['/license']" routerLinkActive="router-link-active" >
+        <div class="col-8">
+            <p class="d-flex align-items-center">Driver’s License</p>
+        </div>
+        <div class="col-4 text-end"><img src="/assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row px-3 py-2 bg-white bottom-border " [routerLink]="['/insurance']" routerLinkActive="router-link-active" >
+        <div class="col-8">
+            <p class="d-flex align-items-center">Insurance</p>
+        </div>
+        <div class="col-4 text-end"><img src="/assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row px-3 py-2  mb-5 bg-white" [routerLink]="['/registration']" routerLinkActive="router-link-active" >
+        <div class="col-8">
+            <p class="d-flex align-items-center">Registration</p>
+        </div>
+        <div class="col-4 text-end"><img src="/assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+</div>

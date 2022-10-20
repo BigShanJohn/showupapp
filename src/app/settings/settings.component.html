@@ -1,0 +1,72 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center">
+        <img [routerLink]="['/dashboard']" routerLinkActive="router-link-active"
+            src="assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+    </div>
+    <div class="col">
+        <h1>Settings</h1>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div class="bg-white">
+    <div class="row p-3" [routerLink]="['/profile']" routerLinkActive="router-link-active">
+        <div class="col-8">
+            <p class="d-flex align-items-center">
+                <img src="assets/img/icon-rg-%20(5).svg?h=85d075204fa61e5a3f8a46e1ca17967f">&nbsp; Profile
+            </p>
+        </div>
+        <div class="col-4 text-end"><img src="assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row p-3" [routerLink]="['/notification']" routerLinkActive="router-link-active">
+        <div class="col-8">
+            <p class="d-flex align-items-center"><img
+                    src="assets/img/icon-rg-%20(6).svg?h=c1e17699abd76414aaa2287f81a7521c">&nbsp; Notifications</p>
+        </div>
+        <div class="col-4 text-end"><img src="assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row p-3" [routerLink]="['/referrer']" routerLinkActive="router-link-active">
+        <div class="col-8">
+            <p class="d-flex align-items-center"><img
+                    src="assets/img/icon-rg-%20(1).svg?h=3bfcbb271fd2183412426a1597e6a3b3">&nbsp; Referrals</p>
+        </div>
+        <div class="col-4 text-end"><img src="assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row p-3" [routerLink]="['/password']" routerLinkActive="router-link-active">
+        <div class="col-8">
+            <p class="d-flex align-items-center"><img
+                    src="assets/img/icon-rg-%20(2).svg?h=49444ce5a5060f43314370b2f70cd329">&nbsp; Password</p>
+        </div>
+        <div class="col-4 text-end"><img src="assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+</div>
+<div class="bg-white mt-5">
+    <div class="row p-3" [routerLink]="['/contact-us']" routerLinkActive="router-link-active">
+        <div class="col-8">
+            <p class="d-flex align-items-center"><img
+                    src="assets/img/icon-rg-%20(3).svg?h=18357313253b6f913a7a510366e4bdee">&nbsp; Contact Us</p>
+        </div>
+        <div class="col-4 text-end"><img src="assets/img/icon-rg-%20(4).svg?h=85d075204fa61e5a3f8a46e1ca17967f"></div>
+    </div>
+    <div class="row p-3">
+        <div class="col-8">
+            <p class="text-primary">Terms of Service</p>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-8">
+            <p class="text-primary">Privacy Policy</p>
+        </div>
+    </div>
+</div>
+<div class="bg-white mt-5">
+    <div class="row p-3 ">
+        <div class="col-8">
+            <p class="text-primary" (click)="logout()">Log Out</p>
+        </div>
+    </div>
+</div>
+<div class="row p-3 pt-5">
+    <div class="col-12">
+        <p class="text-center text-muted pt-5 pb-3">App Version 2.0</p>
+    </div>
+</div>

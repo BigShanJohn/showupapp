@@ -1,0 +1,66 @@
+<section class="d-flex justify-content-center align-items-center bg-primary">
+    <div class="row d-flex justify-content-center align-items-center align-content-center bg-white p-4"
+        style="margin: 0 auto;border-radius: 20px;margin-top: 8vh;margin-bottom: 8vh;margin-right: 5vw;margin-left: 5vw;">
+        <div class="col-12 text-center">
+            <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                style="position:relative; z-index:1; margin: o auto;border-radius: 2px; transform: skew(-15deg);">
+                &nbsp;Let’s get&nbsp;</h1>
+            <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                style="margin-top: -20px; margin: o auto;border-radius: 2px; transform: skew(-15deg);">started!<br></h1>
+        </div>
+        <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+            <p *ngFor="let error of errors">
+                - {{ error }}
+            </p>
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="Email">Email</label>
+            <input class="shadow-none form-control-sm" type="email" style="width: 100%;" name="Email"
+                placeholder="name@email.com" autocomplete="on" required="" minlength="6" maxlength="40"
+                [(ngModel)]="email">
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="Name">Name</label>
+            <input class="shadow-none form-control-sm" type="text" style="width: 100%;" name="First and last"
+                placeholder="First and last" [(ngModel)]="name">
+        </div>
+        <div class="col-12 pt-2">
+            <label class="form-label text-muted" for="Password">Password</label><input
+                class="shadow-none form-control-sm" type="password" style="width: 100%;" placeholder="••••••••••"
+                name="Password" required="" minlength="6" maxlength="40" [(ngModel)]="password">
+        </div>
+        <div class="col-12 pt-2">
+            <label class="form-label text-muted" for="Confirm Password">Confirm
+                Password</label>
+            <input class="shadow-none form-control-sm" type="password" style="width: 100%;" placeholder="••••••••••"
+                name="Confirm Password" required="" minlength="6" maxlength="40" [(ngModel)]="confirm">
+        </div>
+        <div class="col-12 pt-2">
+            <label class="form-label text-muted" for="Phone">Phone</label>
+            <input class="form-control-sm" type="tel" style="width: 100%;" name="Phone" placeholder="(000) 123-4567"
+                [(ngModel)]="phone">
+        </div>
+        <div class="col text-end pt-2">
+            <p class="text-center">By signing up, your agree to our
+                <a href="#">&nbsp;Terms of Service<br><br></a>
+            </p>
+        </div>
+        <div class="col-12 text-center pt-2">
+            <button class="btn btn-warning btn-lg bg-primary rounded-circle" (click)="submit()"
+                style="width: 75px;height: 75px;">
+                <svg *ngIf="!isSubmit" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                    viewBox="0 0 24 24" fill="none" class="text-dark" style="font-size: 23px; margin-bottom: 2px;">
+                    <path
+                        d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                        fill="currentColor"></path>
+                </svg>
+                <img *ngIf="isSubmit"  src="assets/img/loader.gif" class="loader"/>
+            </button>
+        </div>
+        <div class="col-12">
+            <p class="text-center pt-3">Already have an account?&nbsp;&nbsp;<a [routerLink]="['/login']">Sign
+                    up!<br><br></a>
+            </p>
+        </div>
+    </div>
+</section>

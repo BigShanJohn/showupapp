@@ -1,0 +1,118 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center"><img [routerLink]="['/settings']"
+            routerLinkActive="router-link-active" src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+    </div>
+    <div class="col">
+        <h2>Notifications</h2>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div class="row pb-5 mt-5 p-3 bg-white">
+    <div class="col">
+        <p class="pt-4 m-0 pb-1"><strong>Notify me when a driver arrives</strong></p>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">In-App</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.driverArrivedNotificationInApp == 'yes'"
+                            (change)="updateDriverArrivedNotificationInApp()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">Email</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.driverArrivedNotificationInEmail == 'yes'"
+                            (change)="updateDriverArrivedNotificationInEmail()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row pb-5 mt-5 p-3 bg-white">
+    <div class="col">
+        <p class="pt-4 m-0 pb-1"><strong>Notify me when a message is received</strong></p>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">In-App</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.messageReceivedNotificationInApp == 'yes'"
+                        (change)="updateMessageReceivedNotificationInApp()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">Email</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.messageReceivedNotificationInEmail == 'yes'"
+                        (change)="updateMessageReceivedNotificationInEmail()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row pb-5 mt-5 p-3 bg-white">
+    <div class="col">
+        <p class="pt-4 m-0 pb-1"><strong>Notify me when an order is complete</strong></p>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">In-App</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.orderCompletedNotificationInApp == 'yes'"
+                        (change)="updateOrderCompletedNotificationInApp()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">Email</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.updateOrderCompletedNotificationInEmail == 'yes'"
+                        (change)="updateOrderCompletedNotificationInEmail()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row pb-5 mt-5 p-3 bg-white">
+    <div class="col">
+        <p class="pt-4 m-0 pb-1"><strong>Notify me when there is a drop off nearby</strong><br></p>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">In-App</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.dropOffNearByNotificationInApp == 'yes'"
+                        (change)="updateDropOffNearByNotificationInApp()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between align-items-center p-0">
+                <p class="pt-2">Email</p>
+                <div>
+                    <!-- Start: Toggle Switch --><label class="switch">
+                        <input type="checkbox" [checked]="user.dropOffNearByNotificationInEmail == 'yes'"
+                        (change)="updateDropOffNearByNotificationInEmail()">
+                        <span class="slider round"></span>
+                    </label><!-- End: Toggle Switch -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

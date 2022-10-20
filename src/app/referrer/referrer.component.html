@@ -1,0 +1,33 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 bg-primary">
+    <div class="col-2 d-flex justify-content-center align-items-center"><img [routerLink]="['/settings']"
+            routerLinkActive="router-link-active" src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+    </div>
+    <div class="col">
+        <h2>Referral</h2>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<section class="d-flex justify-content-center align-items-center bg-primary" style="width: 100vw;height: 100vh;">
+    <div class="row d-flex justify-content-center align-items-center align-content-center bg-white p-4 pt-5 pb-5"
+        style="margin: 0 auto;border-radius: 20px;margin-top: 8vh;margin-bottom: 8vh;margin-right: 5vw;margin-left: 5vw;">
+        <div class="col-12 text-center"><img class="pb-2"
+                src="/assets/img/Mask%20group.jpg?h=ac71afabacc8c334fc19ebb2fd253fe7"></div>
+        <div class="col-12 pt-3">
+            <p class="text-center text-muted">Share your referral code</p>
+        </div>
+        <div class="col-12 pt-2">
+            <div class="container" style="border: 2px dashed #FFCC2F ;">
+                <div class="input-group">
+                    <input type="text" id="text-content" class="form-control border-0 text-primary"
+                        [value]="user.referrerCode">
+                    <span id="copyButton" class="input-group-addon btn" title="Click to copy">
+                        <ngx-copy-to-clipboard target="#text-content" [success]="onSuccess" [error]="onError"><i
+                                class="fa fa-clipboard text-primary" aria-hidden="true"></i>
+                        </ngx-copy-to-clipboard>
+                    </span>
+                </div>
+            </div><button class="btn btn-primary p-2 mt-4 bg-dark text-white b-radius-sm w-100"
+                type="button"><strong>Invite Friend</strong></button>
+        </div>
+    </div>
+</section>

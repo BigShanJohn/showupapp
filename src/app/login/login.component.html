@@ -1,0 +1,46 @@
+<section class="d-flex justify-content-center align-items-center bg-primary" style="width: 100vw;height: 100vh;">
+    <div class="row d-flex justify-content-center align-items-center align-content-center bg-white p-4"
+        style="margin: 0 auto;border-radius: 20px;margin-top: 8vh;margin-bottom: 8vh;margin-right: 5vw;margin-left: 5vw;">
+        <div class="col-12 text-center">
+            <img class="pb-2" src="/assets/img/Mask%20group.jpg?h=ac71afabacc8c334fc19ebb2fd253fe7">
+        </div>
+        <div class="col-12 text-center">
+            <h1 class="text-primary bg-dark pt-1 pb-2 px-3 d-inline-block"
+                style="margin: o auto;border-radius: 2px; transform: skew(-15deg);">Welcome!</h1>
+        </div>
+        <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+            <div *ngFor="let error of errors">
+                {{ error }}
+            </div>
+        </div>
+        <div class="col-12 pt-3">
+            <label class="form-label text-muted" for="Email">Email</label>
+            <input class="shadow-none form-control-sm" type="email" style="width: 100%;" name="Email"
+                placeholder="name@email.com" autocomplete="on" required="" minlength="6" maxlength="40"
+                [(ngModel)]="email">
+        </div>
+        <div class="col-12 pt-2">
+            <label class="form-label text-muted" for="Password">Password</label>
+            <input class="shadow-none form-control-sm" type="password" style="width: 100%;" placeholder="••••••••••"
+                name="Password" required="" minlength="6" maxlength="40" [(ngModel)]="password">
+        </div>
+        <div class="col text-end pt-2 pb-2"><a href="/Send&amp;Receive/index.html">Forgot Password?</a></div>
+        <div class="col-12 text-center pt-2">
+            <button class="btn btn-warning btn-lg bg-primary rounded-circle" type="submit"
+                style="width: 75px;height: 75px;" (click)="submit()">
+                <svg *ngIf="!isSubmit" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                    fill="none" class="text-dark" style="font-size: 23px; margin-bottom: 2px;">
+                    <path
+                        d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                        fill="currentColor"></path>
+                </svg>
+                <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+            </button>
+        </div>
+        <div class="col-12 pt-2 pb-2">
+            <p class="text-center pt-3">Don’t have an account?
+                <a [routerLink]="['/register']" routerLinkActive="router-link-active">Sign up!<br><br></a>
+            </p>
+        </div>
+    </div>
+</section>

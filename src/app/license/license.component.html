@@ -1,0 +1,101 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center"><img
+            src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5" [routerLink]="['/profile']"
+            routerLinkActive="router-link-active"></div>
+    <div class="col">
+        <h2>Driver’s License</h2>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<div class="row pb-5 pt-5 p-3 bg-white">
+    <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+        <p *ngFor="let error of errors">
+            - {{ error }}
+        </p>
+    </div>
+    <div class="col-12 pt-3">
+        <label class="form-label text-muted" for="License Number">License Number</label>
+        <input class="shadow-none form-control-sm" type="email" style="width: 100%;" name="License Number"
+            placeholder="0000000000" [(ngModel)]="driverLicenseNumber">
+    </div>
+    <div class="col-12 pt-3">
+        <label class="form-label text-muted" for="Name">Exp. Date</label>
+
+        <input [(ngModel)]="driverLicenseExpireDate" theme="dp-material" style="width: 100%;"
+            class="shadow-none form-control-sm" [dpDayPicker]="datePickerConfig">
+    </div>
+    <div class="col-12 pt-2">
+        <label class="form-label text-muted" for="Password">State</label>
+        <select class="shadow-none form-control-sm" type="password" style="width: 100%;"
+            [(ngModel)]="driverLicenseState">
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="District of Columbia">District of Columbia</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Guam">Guam</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Northern Marianas Islands">Northern Marianas Islands</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Virgin Islands">Virgin Islands</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+        </select>
+    </div>
+    <div class="col-12 pt-3">
+        <label class="form-label text-muted" for="Name">Date of Birth</label>
+        <input [(ngModel)]="driverDateOfBirth" theme="dp-material" style="width: 100%;"
+            class="shadow-none form-control-sm" [dpDayPicker]="datePickerConfig">
+    </div>
+    <div class="col-12 pt-3">
+        <button (click)="submit()" class="btn btn-primary p-2 mt-5 bg-primary text-dark b-radius-sm w-100"
+            type="button">
+            <strong *ngIf="!isSubmit">Save</strong>
+            <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+        </button>
+    </div>
+
+</div>

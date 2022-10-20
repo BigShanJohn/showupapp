@@ -1,0 +1,82 @@
+<div class="row text-center d-flex justify-content-center align-items-center m-0 pt-5 pb-5">
+    <div class="col-2 d-flex justify-content-center align-items-center">
+        <img [routerLink]="['/dashboard']" routerLinkActive="router-link-active" 
+            src="/assets/img/Group0913.svg?h=af414971b139d8a6699d3c593b552ed5">
+        </div>
+    <div class="col">
+        <h1>Send</h1>
+    </div>
+    <div class="col-2 text-center"></div>
+</div>
+<section class="b-radius p-1 pt-4 pb-4"
+    style="box-shadow: 3px 7px 22px 4px rgba(196,196,196,0.30); width:86vw; margin: 0 auto;">
+    <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+        <p *ngFor="let error of errors">
+            - {{ error }}
+        </p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2 class="pb-4">Item Info</h2>
+            <p>Item Description</p>
+            <input type="text" class="w-100" style="border: 0; border-bottom: 1px solid gray;"
+                [(ngModel)]="description">
+        </div>
+    </div>
+    <div class="row pt-4 pb-4">
+        <div class="col-6">
+            <p>Add a photo</p>
+            <img class="img-fluid" [src]="cardImageBase64" width="145" height="145" style="object-fit:cover;">
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <img class="pt-4 mt-2 img-fluid" src="/assets/img/Group%20190.svg?h=e1bf07d3adf112977c1f9cafba4dbdd0"
+                (click)="uploadPhoto()">
+            <input id="file-upload" type="file" (change)="fileChangeEvent($event)" class="fileInputProfile"
+                style="display: none;">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" style="background-color: #ededed;">
+            <p>Additional information</p>
+            <textarea class="w-100" [(ngModel)]="additionalInformation"
+                style="border: 0; border-bottom: 1px solid #ededed; background: #ededed;"></textarea>
+        </div>
+    </div>
+    <div class="row pt-5 pb-5">
+        <div class="col">
+            <h2 class="pb-5">Delivery Info</h2>
+
+            <p class="m-0 pb-1">Receiver Name</p><input type="email" class="w-100"
+                style="border: 0; border-bottom: 1px solid gray;" placeholder=" Enter  name"
+                [(ngModel)]="receiverName">
+
+            <p class="m-0 pb-1 pt-4">Receiver Email</p><input type="email" class="w-100"
+                style="border: 0; border-bottom: 1px solid gray;" placeholder="name@email.com"
+                [(ngModel)]="receiverEmail">
+
+            <p class="pt-4 m-0 pb-1">Pick Up Location</p>
+            <div class="d-flex align-items-end" (click)="pickUpAddress()">
+                <input type="text" class="w-100" style="border: 0; border-bottom: 1px solid gray;"
+                    placeholder="Enter address" readonly [(ngModel)]="pickUpLocationAddress">
+                <i class="fa fa-map-marker justify-content-center align-items-end"
+                    style="border-bottom: 1px solid gray;color: #FFCC2F;font-size: 25px;padding-bottom: 2px;"></i>
+            </div>
+
+            <p class="pt-4 m-0 pb-1">Drop Off Location</p>
+            <div class="d-flex align-items-end" (click)="dropOffAddress()">
+                <input type="text" class="w-100" style="border: 0; border-bottom: 1px solid gray;"
+                    placeholder="Enter address" readonly [(ngModel)]="dropOffLocationAddress">
+                <i class="fa fa-map-marker justify-content-center align-items-end"
+                    style="border-bottom: 1px solid gray;color: #FFCC2F;font-size: 25px;padding-bottom: 2px;"></i>
+            </div>
+
+            <button class="btn btn-primary p-2 mt-5 bg-primary text-dark b-radius-sm w-100" type="button"
+                (click)="submit()">
+                <strong *ngIf="!isSubmit">Continue</strong>
+                <img *ngIf="isSubmit" src="assets/img/loader.gif" class="loader" />
+            </button>
+        </div>
+    </div>
+</section>
+<app-map [field]="addressType" (place)="onPlacePicked($event)"></app-map>

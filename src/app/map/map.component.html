@@ -1,0 +1,23 @@
+<div class="modal fade" role="dialog" tabindex="-1" id="set-address">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mx-auto" role="document"
+        style="width: 86vw;">
+        <div class="modal-content">
+            <div class="modal-body text-center p-4  bg-primary">
+                <div class="form-group">
+                    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+                        placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off"
+                        type="text" #search [value]="address">
+                </div>
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                    <agm-marker [latitude]="latitude" [longitude]="longitude" (dragEnd)="markerDragEnd($event)"
+                        [markerDraggable]="true"></agm-marker>
+                </agm-map>
+                <div class="pt-2">
+                    <button class="btn btn-cancel" (click)="cancel()" type="button"
+                        data-bs-dismiss="modal"><strong>Cancel</strong></button>
+                    <button class="btn btn-continue" (click)="submit()" type="button"><strong>Continue</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
